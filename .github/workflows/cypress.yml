@@ -44,6 +44,9 @@ jobs:
           npm -v
           npx cypress --version
 
+      - name: Build the app
+        run: npm run build
+  
 
       - name: Run Cypress tests
         run: npx cypress run

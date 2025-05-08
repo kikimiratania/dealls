@@ -78,6 +78,6 @@ describe('Register ', () => {
    // welcome dealls [banner]
    //cy.get('.ant-modal-body').should('be.visible');
    cy.wait(3000);
-   cy.get('.ant-modal-close-x').click();
+   // cy.get('.ant-modal-close-x').click();
   })
 })
