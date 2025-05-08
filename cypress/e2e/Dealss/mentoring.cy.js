@@ -128,9 +128,9 @@ describe('Mentoring', () => {
         cy.wait(5000);
         //btn done
         cy.get('#mentoring-schedule-finish-request-session-btn')
-          .should('not.be.disabled', { timeout: 10000 }).and('not.have.class', 'ant-btn-loading')
+          .should('not.be.disabled', { timeout: 10000 }).should('not.have.class', 'ant-btn-loading')
           .click();
-          
+
         cy.get('.ant-btn').click();
         cy.wait(3000);
         })
