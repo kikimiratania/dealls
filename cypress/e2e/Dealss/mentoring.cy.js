@@ -76,7 +76,8 @@ describe('Mentoring', () => {
     it('Book a mentoring session by career', () => {
         cy.get('[href="/mentoring/bi-598"]').click(); // click mentor
         cy.wait(4000);
-        cy.scrollTo('bottom')
+        cy.scrollTo('bottom');
+        cy.wait(5000);
         cy.get('.mt-3').click();  // btn Ajukan Jadwal
         // Step 1 : Select the topic you want to discuss with your mentor.
         cy.get('.grid > :nth-child(1) > .relative').click();
@@ -115,7 +116,8 @@ describe('Mentoring', () => {
         cy.get('#confirmPassword').type('Password');
         cy.get(':nth-child(1) > .ant-checkbox-wrapper > :nth-child(2)').click();
         cy.get(':nth-child(2) > .ant-checkbox-wrapper > :nth-child(2)').click();
-        cy.get('#mentoring-schedule-finish-request-session-btn').click();
+        cy.wait(3000);
+        cy.get('#mentoring-schedule-finish-request-session-btn').should('not.be.disabled').click();
         cy.get('.ant-btn').click();
         cy.wait(3000);
         })
