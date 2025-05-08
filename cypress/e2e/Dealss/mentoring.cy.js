@@ -99,6 +99,9 @@ describe('Mentoring', () => {
 
         //step 3
         cy.get('#fullName').type('test'); //name
+       cy.get('#whatsapp' ).type('081112238'); // WA without country code
+        cy.get('.ant-show-help-item-appear').should('be.visible');
+        cy.get('#whatsapp' ).clear();
         cy.get('#whatsapp').type('6281112238'); //WA
         const email = `user${Math.floor(Math.random() * 10000)}@yopmail.com`;
         cy.get('#email').type(email); //email
@@ -112,7 +115,13 @@ describe('Mentoring', () => {
 
 
         //Step 4
+        //confrim Password not match with password
         cy.get('#password').type('Password');
+        cy.get('#confirmPassword').type('Password123');
+        cy.get('.ant-show-help-item-appear').should('be.visible');
+        cy.get('.ant-form-item-explain-error').should('be.visible');
+        cy.get('#confirmPassword').clear();
+        //confrim Password  match with password
         cy.get('#confirmPassword').type('Password');
         cy.get(':nth-child(1) > .ant-checkbox-wrapper > :nth-child(2)').click();
         cy.get(':nth-child(2) > .ant-checkbox-wrapper > :nth-child(2)').click();
