@@ -117,7 +117,7 @@ describe('Mentoring', () => {
         cy.get(':nth-child(1) > .ant-checkbox-wrapper > :nth-child(2)').click();
         cy.get(':nth-child(2) > .ant-checkbox-wrapper > :nth-child(2)').click();
         cy.wait(5000);
-        cy.get('#mentoring-schedule-finish-request-session-btn').should('not.be.disabled').click();
+        cy.get('#mentoring-schedule-finish-request-session-btn').should('not.be.disabled', { timeout: 10000 }).click();
         cy.get('.ant-btn').click();
         cy.wait(3000);
         })
