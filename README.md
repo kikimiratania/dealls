@@ -8,7 +8,7 @@ Main Features
 
 Technologi Used : Cypress
 How to Run
-1. Clone the Repository : git clone https://github.com/kikimiratania/Test-Dealls.git
+1. Clone the Repository : git clone https://github.com/kikimiratania/dealls.git
 2. Install Dependency : npm install cypress --save -dev , cd client  --> npm install
 3. Testing : npx cypress open
 
