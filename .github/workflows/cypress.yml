@@ -34,7 +34,7 @@ jobs:
         
       - name: Fix Cypress permission issue
         run: chmod +x ./node_modules/.bin/cypress
-        
+
       - name: Install Cypress binary
         run: npx cypress install
 
@@ -47,8 +47,8 @@ jobs:
           npm -v
           npx cypress --version
 
-      - name: Build the app
-        run: npm run build
+      # - name: Build the app
+      #   run: npm run build
   
 
       - name: Run Cypress tests
