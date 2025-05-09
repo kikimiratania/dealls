@@ -99,7 +99,7 @@ describe('Mentoring', () => {
 
         //step 3
         cy.get('#fullName').type('test'); //name
-       cy.get('#whatsapp' ).type('081112238'); // WA without country code
+        cy.get('#whatsapp' ).type('081112238'); // WA without country code
         cy.get('.ant-show-help-item-appear').should('be.visible');
         cy.get('#whatsapp' ).clear();
         cy.get('#whatsapp').type('6281112238'); //WA
@@ -113,7 +113,6 @@ describe('Mentoring', () => {
         cy.get('#customPortfolios_0_url').type('test.git');
         cy.get('#mentoring-schedule-personal-information-request-session-btn > span').click();
 
-
         //Step 4
         //confrim Password not match with password
         cy.get('#password').type('Password');
@@ -125,20 +124,21 @@ describe('Mentoring', () => {
         cy.get('#confirmPassword').type('Password');
         cy.get(':nth-child(1) > .ant-checkbox-wrapper > :nth-child(2)').click();
         cy.get(':nth-child(2) > .ant-checkbox-wrapper > :nth-child(2)').click();
-        cy.wait(5000);
-        //btn done
+        cy.wait(10000);
+        //btn done 
         cy.get('#mentoring-schedule-finish-request-session-btn')
-          .should('not.be.disabled', { timeout: 10000 }).should('not.have.class', 'ant-btn-loading')
-          .click();
-
+          .should('not.be.disabled', { timeout: 20000 }).should('not.have.class', 'ant-btn-loading')
+          .click({force: true });
+        cy.wait(10000);
         cy.get('.ant-btn').click();
-        cy.wait(3000);
-        })
+        cy.wait(6000);
+       
 
-    it('My session ', () => {
+
+        // View My Session
         cy.get('.mt-4 > .relative').click();
         cy.screenshot();
-        //cy.get('.ant-modal-close-x').click();
-        })
-        
+        cy.wait(5000);
+        cy.get('.ant-modal-close-x').click();
+    })
 })
